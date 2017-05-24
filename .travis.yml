@@ -1,4 +1,0 @@
-mvn sonar:sonar \
-    -Dsonar.host.url=https://sonarqube.com \
-    -Dsonar.organization=msgjt-github \
-    -Dsonar.login=888396a11224468ff6ee0fc64370f0cc323dc1db

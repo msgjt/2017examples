@@ -1,4 +1,14 @@
-mvn sonar:sonar \
-    -Dsonar.host.url=https://sonarqube.com \
-    -Dsonar.organization=msgjt-github \
-    -Dsonar.login=888396a11224468ff6ee0fc64370f0cc323dc1db
+language: java
+sudo: false
+install: true
+
+addons:
+  sonarqube:
+    organization: "msgjt-github"
+	
+jdk:
+  - oraclejdk8
+  
+script:
+  # the following command line builds the project, runs the tests with coverage and then execute the SonarQube analysis
+  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar

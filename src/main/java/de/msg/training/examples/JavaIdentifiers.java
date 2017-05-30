@@ -22,7 +22,7 @@ public class JavaIdentifiers {
   private static String \u0024;
 
 
-  public static void main(final String[] args) {
+  public static void main(final String... args) {
     $ = "This is strange indeed";
     System.out.println($sign);
     System.out.println("\u0041");

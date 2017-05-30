@@ -5,6 +5,13 @@ package de.msg.training.examples;
  */
 public class JavaIdentifiers {
 
+  /**
+   * Invalid identifiers
+   */
+  //  private String 4;
+  //  private String %percent;
+  //  private String #include;
+
   private String _v4r1abl3;
 
   private static String $sign = "\u0024";

@@ -1,4 +1,4 @@
-package de.msg.training.examples;
+package de.msg.training.examples.staticimport;
 
 public class StaticImport {
 

@@ -12,6 +12,7 @@ public class JavaIdentifiers {
   //  private String %percent;
   //  private String #include;
   //  private String switch;
+  //  private String native;
 
   private String _v4r1abl3;
 

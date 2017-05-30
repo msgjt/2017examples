@@ -11,8 +11,11 @@ public class JavaIdentifiers {
   //  private String 4;
   //  private String %percent;
   //  private String #include;
+  //  private String switch;
 
   private String _v4r1abl3;
+
+  private Integer wellMyDearFriendThisIdentifierIsGoingToBeAnExceptioanallyLongIdentifierCommaWhichIsUsedForWhateverPurposeYouWantOrCanUseAnIntegerVariable;
 
   private static String $sign = "\u0024";
 

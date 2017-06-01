@@ -1,6 +1,11 @@
 package de.msg.training.examples.accessmodifiers.product;
 
+import org.apache.log4j.Logger;
+
 abstract final class Product {
+
+  private static final Logger log4j = Logger.getLogger(Product.class);
+
 
   double getPrice() {
     return calculatePrice() * getProfitMargin();

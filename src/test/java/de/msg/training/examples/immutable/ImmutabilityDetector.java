@@ -9,7 +9,6 @@ import java.lang.reflect.Modifier;
 import java.util.Date;
 import java.util.List;
 
-import org.junit.Ignore;
 import org.junit.Test;
 
 public class ImmutabilityDetector {
@@ -21,9 +20,13 @@ public class ImmutabilityDetector {
       throw new AssertionError("Class is not final!");
 
     Field[] objFields = objClass.getDeclaredFields();
-    for (Field objField : objFields)
+    for (Field objField : objFields) {
       if (!Modifier.isFinal(objField.getModifiers()))
-        throw new AssertionError("Field " + objField.getName() + " is not final!");
+        throw new AssertionError("Field '" + objField.getName() + "' is not final!");
+      if (Modifier.isPublic(objField.getModifiers()))
+        throw new AssertionError("Field '" + objField.getName() + "' is public!");
+
+    }
 
     Method[] objMethods = objClass.getDeclaredMethods();
     for (Method method : objMethods)
@@ -50,7 +53,7 @@ public class ImmutabilityDetector {
           original.setTime(original.getTime() + 5);
           Date copy = (Date) method.invoke(object, new Object[] {});
           if (original.equals(copy))
-            throw new AssertionError("Date object not a copy sent!");
+            throw new AssertionError("Date getter should send a copy!");
         }
         else if (returnValue instanceof List) {
           List<?> original = (List<?>) returnValue;
@@ -85,7 +88,6 @@ public class ImmutabilityDetector {
 
 
   @Test
-  @Ignore
   public void isObjectImmutable() {
     ImmutableDate date = new ImmutableDate(new Date());
 

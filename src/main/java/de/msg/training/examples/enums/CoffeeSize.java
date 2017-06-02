@@ -4,7 +4,15 @@ public enum CoffeeSize {
 
   SMALL(100),
   MEDIUM(200),
-  BIG(300);
+  BIG(300),
+  UNKNOWN(-1) {
+
+    @Override
+    public int getSize() {
+      throw new IllegalArgumentException("Unknown size");
+    }
+
+  };
 
   private int size;
 

@@ -8,10 +8,6 @@ addons:
       - master
       - 1_2_Java_Basics_1_OCA1
       - 1_3_Programming_basics_1_Java
- 
-   email:
-    on_success: never # default: change
-    on_failure: always # default: always
 jdk:
   - oraclejdk8
 script:

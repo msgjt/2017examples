@@ -3,11 +3,11 @@ package edu.msg.ro.examples.streams.filters.second.before;
 import java.util.Arrays;
 import java.util.List;
 
-public class BeforeJava8 {
+public class TestSearchBeforeJava8 {
 	public static void main(String[] args) {
-		List<Person> persons = Arrays.asList(new Person("mkyong", 30), new Person("jack", 20),
-				new Person("lawrence", 40));
-		Person result = getStudentByName(persons, "jack");
+		List<Person> persons = Arrays.asList(new Person("Wick", 30), new Person("Ionescu", 20),
+				new Person("Popescu", 40));
+		Person result = getStudentByName(persons, "Wick");
 		System.out.println(result);
 	}
 

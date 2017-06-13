@@ -6,20 +6,22 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
+
 public class TestJava8 {
 	public static void main(String[] args) {
-		List<Staff> staff = Arrays.asList(new Staff("mkyong", 30, new BigDecimal(10000)),
-				new Staff("jack", 27, new BigDecimal(20000)), new Staff("lawrence", 33, new BigDecimal(30000)));
+		List<Staff> staff = Arrays.asList(new Staff("Wick", 30, new BigDecimal(10000)),
+				new Staff("Popescu", 27, new BigDecimal(20000)), 
+				new Staff("Ionescu", 33, new BigDecimal(30000)));
 
 		// Before Java 8
 		List<String> result = new ArrayList<>();
 		for (Staff x : staff) {
 			result.add(x.getName());
 		}
-		System.out.println(result); // [mkyong, jack, lawrence]
+		System.out.println(result); // [Wick, Popescu, Ionescu]
 
 		// Java 8
 		List<String> collect = staff.stream().map(x -> x.getName()).collect(Collectors.toList());
-		System.out.println(collect); // [mkyong, jack, lawrence]
+		System.out.println(collect); // [Wick, Popescu, Ionescu]
 	}
 }

@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class BeforeJava8 {
+public class TestfilteringOutBeforeJava8 {
 	public static void main(String[] args) {
 
 		List<String> lines = Arrays.asList("java", "c#", "c++");
-		List<String> result = getFilterOutput(lines, "mkyong");
+		List<String> result = getFilterOutput(lines, "test");
 		for (String temp : result) {
 			System.out.println(temp); // output : java, c#
 		}

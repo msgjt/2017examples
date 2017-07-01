@@ -1,5 +1,6 @@
 package de.msg.training.examples.io.streams;
 
+import java.io.UnsupportedEncodingException;
 import java.nio.charset.Charset;
 import java.util.Arrays;
 
@@ -21,6 +22,16 @@ public class Encoding {
 
     System.out.println(UTF_8 + COLON + Arrays.toString(utf8Encoded));
     System.out.println(ASCII + COLON + Arrays.toString(asciiEncoded));
+
+    //if we use the wrong encoding we will get funny characters
+    String wrongDecoding;
+    try {
+      wrongDecoding = new String(asciiEncoded, UTF_8);
+      System.out.println(wrongDecoding);
+    }
+    catch (UnsupportedEncodingException e) {
+      e.printStackTrace();
+    }
   }
 
 }

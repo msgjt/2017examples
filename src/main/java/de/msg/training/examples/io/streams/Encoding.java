@@ -1,4 +1,4 @@
-package de.msg.training.examples.io.character;
+package de.msg.training.examples.io.streams;
 
 import java.nio.charset.Charset;
 import java.util.Arrays;

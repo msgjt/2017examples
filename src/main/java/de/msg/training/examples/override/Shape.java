@@ -20,7 +20,8 @@ public class Shape implements Order {
   }
 
 
-  public Number getOrderNumber() {
+  @Override
+  public Integer getOrderNumber() {
     return 1;
   }
 

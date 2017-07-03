@@ -3,7 +3,7 @@ package de.msg.training.examples.override;
 import java.io.IOException;
 import java.io.InputStream;
 
-public class Shape implements Ordered {
+public class Shape implements Order {
 
   public void printName() {
     System.out.println("I am a Shape");
@@ -20,7 +20,7 @@ public class Shape implements Ordered {
   }
 
 
-  public Number getOrder() {
+  public Number getOrderNumber() {
     return 1;
   }
 

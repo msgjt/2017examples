@@ -10,7 +10,7 @@ public class Rectangle extends Square {
 
   @Override
   // return type is Integer instead of Number
-  public Integer getOrder() {
+  public Integer getOrderNumber() {
     return 5;
   }
 

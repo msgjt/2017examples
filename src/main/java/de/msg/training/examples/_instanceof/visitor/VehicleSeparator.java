@@ -1,9 +1,9 @@
 package de.msg.training.examples._instanceof.visitor;
 
 import de.msg.training.examples._instanceof.VehicleContainer;
-import de.msg.training.examples._instanceof.vmodel.VBoat;
-import de.msg.training.examples._instanceof.vmodel.VCar;
-import de.msg.training.examples._instanceof.vmodel.VPlane;
+import de.msg.training.examples._instanceof.vmodel.VisitableBoat;
+import de.msg.training.examples._instanceof.vmodel.VisitableCar;
+import de.msg.training.examples._instanceof.vmodel.VisitablePlane;
 
 public class VehicleSeparator implements VehicleVisitor {
 
@@ -16,19 +16,19 @@ public class VehicleSeparator implements VehicleVisitor {
 
 
   @Override
-  public void visit(final VCar car) {
+  public void visit(final VisitableCar car) {
     container.getCarList().add(car);
   }
 
 
   @Override
-  public void visit(final VPlane plane) {
+  public void visit(final VisitablePlane plane) {
     container.getPlaneList().add(plane);
   }
 
 
   @Override
-  public void visit(final VBoat boat) {
+  public void visit(final VisitableBoat boat) {
     container.getBoatList().add(boat);
   }
 

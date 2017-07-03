@@ -1,16 +1,16 @@
 package de.msg.training.examples._instanceof.visitor;
 
-import de.msg.training.examples._instanceof.vmodel.VBoat;
-import de.msg.training.examples._instanceof.vmodel.VCar;
-import de.msg.training.examples._instanceof.vmodel.VPlane;
+import de.msg.training.examples._instanceof.vmodel.VisitableBoat;
+import de.msg.training.examples._instanceof.vmodel.VisitableCar;
+import de.msg.training.examples._instanceof.vmodel.VisitablePlane;
 
 public interface VehicleVisitor {
 
-  void visit(final VCar car);
+  void visit(final VisitableCar car);
 
 
-  void visit(final VPlane plane);
+  void visit(final VisitablePlane plane);
 
 
-  void visit(final VBoat boat);
+  void visit(final VisitableBoat boat);
 }

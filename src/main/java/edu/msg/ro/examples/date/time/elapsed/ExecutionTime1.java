@@ -1,7 +1,7 @@
 package edu.msg.ro.examples.date.time.elapsed;
 
 import java.util.concurrent.TimeUnit;
-
+ 
 public class ExecutionTime1 {
 
 	public static void main(String[] args) throws InterruptedException {

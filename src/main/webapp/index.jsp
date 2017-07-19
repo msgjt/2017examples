@@ -2,8 +2,8 @@
 <body>
 <h2>Hello World!</h2>
 
-<form action="HelloServletMapping" method="get">
-	<input name="helloText" value="Default Value" />
+<form action="." method="get">
+	<input name="helloText" value="<%= request.getParameter("helloText") %>" />
 	<input type="submit" value="Send!" />
 </form>
 

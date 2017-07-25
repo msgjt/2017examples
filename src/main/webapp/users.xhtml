@@ -7,6 +7,7 @@
 
 <h:head>
 	<title><h:outputText value="#{msg['users.title']}" /></title>
+	<h:outputStylesheet library="css" name="style.css"/>
 </h:head>
 <h:body>
 	<f:view>
@@ -27,8 +28,15 @@
 			</h:dataTable>
 			
 			<h:commandLink value="#{msg['general.logout']}" action="#{loginBean.processLogout}" />
+			
+			<h:link value="Send some params without managed bean" outcome="nobean">
+				<f:param id="userName" name="userNameParam" value="John Smith" />
+				<f:param id="occupation" name="occupationParam" value="Secret Agent" />
+			</h:link>
 
 		</h:form>
+		
+		<h:graphicImage library="img" name="Koala.jpg" />
 
 	</f:view>
 </h:body>

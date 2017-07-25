@@ -6,18 +6,19 @@
 	xmlns:h="http://java.sun.com/jsf/html">
 
 <h:head>
-	<title>JSF 2.0 Hello World</title>
+	<title>JSF 2.0 Ajax</title>
 </h:head>
 <h:body>
 	<f:view>
 		<h:form>
-			<h2>Welcome to Example 01 - Basics</h2>
+			<h2>Ajax!</h2>
 
-			<p>we can combine normal tags with JSF tags, but JSF tags are
-				preferred</p>
+			<h:outputLabel for="valueOne" value="#{ajaxBean.valueOne}" />
+			
+				<h:inputText id="valueOne" value="#{ajaxBean.valueOne}">
+					<f:ajax render="@form" />
+				</h:inputText>
 
-			<h:commandLink value="Log in" action="login" />
-			<h:commandLink value="primefaces hello" action="primefaceshello" />
 
 		</h:form>
 

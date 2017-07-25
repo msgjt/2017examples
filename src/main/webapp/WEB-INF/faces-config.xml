@@ -7,7 +7,7 @@
     
     <application>
 		<resource-bundle>
-			<base-name>jsf01.messages</base-name>
+			<base-name>jsf02.messages</base-name>
 			<var>msg</var>
 		</resource-bundle>
 		<locale-config>

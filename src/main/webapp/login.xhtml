@@ -23,17 +23,20 @@
 				</f:facet>
 
 				<h:outputLabel for="username" value="#{msg['login.username']}" />
-				<h:inputText id="username" value="#{loginBean.user.userName}" />
+				<h:inputText id="username" value="#{loginBean.user.userName}">
+					<f:validateLength minimum="3" maximum="10" />
+				</h:inputText>
 				<h:message for="username" />
-				
-				<h:outputLabel for="password" value="#{msg['login.password']}" />
-				<h:inputText id="password" value="#{loginBean.user.password}" />
-				<h:message for="password" />
 
+				<h:outputLabel for="password" value="#{msg['login.password']}" />
+				<h:inputText id="password" value="#{loginBean.user.password}">
+					<f:validator validatorId="passwordValidator" />
+				</h:inputText>
+				<h:message for="password" />
+				
 				<f:facet name="footer">
 					<h:panelGroup style="display:block; text-align:center">
-						<h:commandButton id="submit" value="#{msg['login.loginButton']}" 
-							action="#{loginBean.processLogin}" />
+						<h:commandButton id="submit" value="#{msg['login.loginButton']}" action="#{loginBean.processLogin}" actionListener="#{loginBean.loginActionListener}"/>
 					</h:panelGroup>
 				</f:facet>
 

@@ -25,6 +25,8 @@
 					#{user.password}
 				</h:column>
 			</h:dataTable>
+			
+			<h:commandLink value="#{msg['general.logout']}" action="#{loginBean.processLogout}" />
 
 		</h:form>
 

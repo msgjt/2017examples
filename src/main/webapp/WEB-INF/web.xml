@@ -12,6 +12,11 @@
 		<param-name>hello_world</param-name>
 		<param-value>Hello World!</param-value>
 	</context-param>
+	
+	<context-param>
+		<param-name>primefaces.THEME</param-name>
+		<param-value>bluesky</param-value>
+	</context-param>
  
 	<!-- Welcome page -->
 	<welcome-file-list>

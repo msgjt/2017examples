@@ -7,6 +7,7 @@ package jsf02;
  * @author Mihaly Fodor
  */
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.enterprise.context.RequestScoped;
 import javax.enterprise.inject.Produces;
@@ -27,6 +28,8 @@ public class LoginBean implements Serializable {
 	private static final long serialVersionUID = -2617767540112561117L;
 
 	private User user = new User();
+	
+	private Date date = new Date();
 
 	@Inject
 	private LoginFacade loginFacade;
@@ -93,5 +96,13 @@ public class LoginBean implements Serializable {
 	@RequestScoped
 	public FacesContext getFacesContext() {
 		return FacesContext.getCurrentInstance();
+	}
+
+	public Date getDate() {
+		return date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
 	}
 }

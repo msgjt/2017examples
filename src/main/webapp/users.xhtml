@@ -3,40 +3,59 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:h="http://java.sun.com/jsf/html">
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
 
 <h:head>
 	<title><h:outputText value="#{msg['users.title']}" /></title>
-	<h:outputStylesheet library="css" name="style.css"/>
+	<h:outputStylesheet library="css" name="style.css" />
 </h:head>
 <h:body>
 	<f:view>
 
 		<h:form id="usersForm">
-		
+
 			<h:messages />
-		
-			<h:dataTable value="#{usersBean.allUsers}" var="user">
-				<h:column>
-					<f:facet name="header">Username</f:facet>
+
+			<p:dataTable value="#{usersBean.allUsers}" var="user" rows="5"
+				paginator="true"
+				paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+				rowsPerPageTemplate="5,10,15">
+				<p:column headerText="Username" sortBy="#{user.userName}">
 					#{user.userName}
-				</h:column>
-				<h:column>
-					<f:facet name="header">Password</f:facet>
+				</p:column>
+				<p:column headerText="Password" sortBy="#{user.password}">
 					#{user.password}
-				</h:column>
-			</h:dataTable>
-			
-			<h:commandLink value="#{msg['general.logout']}" action="#{loginBean.processLogout}" />
-			
-			<h:link value="Send some params without managed bean" outcome="nobean">
+				</p:column>
+			</p:dataTable>
+
+			<h:commandLink value="#{msg['general.logout']}"
+				action="#{loginBean.processLogout}" />
+
+			<h:link value="Send some params without managed bean"
+				outcome="nobean">
 				<f:param id="userName" name="userNameParam" value="John Smith" />
 				<f:param id="occupation" name="occupationParam" value="Secret Agent" />
 			</h:link>
 
 		</h:form>
-		
+
 		<h:graphicImage library="img" name="Koala.jpg" />
+
+		<p:growl id="message" showDetail="true" />
+
+		<p:commandButton value="Destroy the World"
+			actionListener="#{usersBean.destroyWorld}" update="message">
+			<p:confirm header="Confirmation" message="Are you sure?"
+				icon="ui-icon-alert" />
+		</p:commandButton>
+
+		<p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+			<p:commandButton value="Yes" type="button"
+				styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
+			<p:commandButton value="No" type="button"
+				styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+		</p:confirmDialog>
 
 	</f:view>
 </h:body>

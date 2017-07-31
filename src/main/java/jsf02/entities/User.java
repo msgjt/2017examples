@@ -5,6 +5,8 @@ package jsf02.entities;
 
 import java.io.Serializable;
 
+import javax.persistence.Transient;
+
 /**
  * @author Mihaly Fodor
  */
@@ -15,7 +17,7 @@ public class User implements Serializable {
 	private String userName;
 
 	private String password;
-
+	
 	public User() {
 		super();
 	}
